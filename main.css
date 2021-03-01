@@ -1,0 +1,49 @@
+/*Specificeer lettertypes zodat iedere bezoeker hetzelfde ziet*/
+@font-face {
+	font-family: "MyriadPro semibold";
+	src: url('Fonts/MYRIADPRO-SEMIBOLD.otf') format('opentype');
+}
+
+@font-face {
+	font-family: "MyriadPro regular";
+	src: url('Fonts/MYRIADPRO-REGULAR.otf') format('opentype');
+}
+
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+
+.item {
+	height: 50px;
+	width: 500px;
+	margin: 0px auto;
+	/*border: 1px solid green;*/
+}
+
+.item span {
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+#time {
+	margin-top: 420px;
+	font-size: 40px;
+	font-family: MyriadPro semibold;
+}
+
+#date {
+	font-size: 30px;
+	font-family: MyriadPro regular;
+}
+
+.time {
+	/*background-color: red;*/
+	grid-area: time;
+}
+
+.date {
+	/*background-color: blue;*/
+	grid-area: date;
+}
