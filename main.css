@@ -1,12 +1,12 @@
 /*Specificeer lettertypes zodat iedere bezoeker hetzelfde ziet*/
 @font-face {
 	font-family: "MyriadPro semibold";
-	src: url('Fonts/MYRIADPRO-SEMIBOLD.otf') format('opentype');
+	src: url('Fonts/MYRIADPRO-SEMIBOLD.OTF') format('opentype');
 }
 
 @font-face {
 	font-family: "MyriadPro regular";
-	src: url('Fonts/MYRIADPRO-REGULAR.otf') format('opentype');
+	src: url('Fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
 
 body {
