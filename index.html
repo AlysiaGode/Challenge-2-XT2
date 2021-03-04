@@ -4,28 +4,38 @@
 	<meta charset="UTF-8">
    	<!-- Zorgt dat de content zich schaalt aan de browser van het apparaat -->
    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Time Clock</title>
+	<title>Aly's Clock</title>
 	<link rel="stylesheet" type="text/css" href="gridlayout.css">
 	<link rel="stylesheet" type="text/css" href="main.css">	
    	<script src="script.js" defer></script>
 </head>
 <body>
+	<div class="starsBg">
+			<div id='stars'></div>
+			<div id='stars2'></div>
+			<div id='stars3'></div>
+		</div>
 	<div class="grid-container">
-		<div class="time grid-item">
-			<div id="time" class="item">
-				<span id="textTime" class="24HourClock">Tijd</span>
+			<div class="time grid-item">
+				<div id="time" class="item">
+					<span id="textTime" class="24HourClock">Tijd</span>
+				</div>
 			</div>
-		</div>
-		<div class="date grid-item">
-			<div id="date" class="item">
-				<span id="textDate">Datum</span>
+			<div class="date grid-item">
+				<div id="date" class="item">
+					<span id="textDate">Datum</span>
+				</div>
 			</div>
-		</div>
 	</div>
 	<div class="weather">
-		<div class="rain">
-				
-		</div>
+		<div class="rain"></div>
+		<div id="sun"></div>
+		<div id="moon"><img src="Fotos/moon.png" height="100px" width="100px"></div>
+	</div>
+	<div class="bg">
+		<div id="mountainBack"><img src="Fotos/mountains-back-night.png"></div>
+		<div id="mountainMiddle"><img src="Fotos/mountains-mid1-night.png"></div>
+		<div id="mountainFront"><img src="Fotos/mountains-mid2-night.png"></div>
 	</div>
 </body>
 </html>
