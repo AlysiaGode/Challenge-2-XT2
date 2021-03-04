@@ -70,12 +70,12 @@ body {
 #time {
 	margin-top: 420px;
 	font-size: 40px;
-	font-family: MyriadPro semibold;
+	font-family: MyriadPro semibold, arial;
 }
 
 #date {
 	font-size: 30px;
-	font-family: MyriadPro regular;
+	font-family: MyriadPro regular, arial;
 }
 
 .time {
