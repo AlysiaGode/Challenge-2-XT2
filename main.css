@@ -23,6 +23,11 @@ body {
 	overflow: hidden;
 }
 
+.grid-container {
+	position: relative;
+	z-index: 1;
+}
+
 #mountainFront, #mountainMiddle, #mountainBack, .clouds {
 	position: absolute;
 	height: 100%;

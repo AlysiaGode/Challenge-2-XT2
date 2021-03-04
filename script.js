@@ -58,8 +58,15 @@ function timeToday() {
 			textTime.innerHTML = hours + ":" + minutes + ":" + seconds;
 			textDate.innerHTML = day + "-" + month + "-" + year;
 		}
+}
 
-	window.onclick = function() {
+//per seconde de nieuwe tijd weergeven
+setInterval(function(){
+	timeToday();
+},1000);
+
+var buttonContainer = document.getElementsByClassName("grid-container");
+window.onclick = function() {
 		if (textTime.classList.contains("24HourClock")) {
 			textTime.classList.remove("24HourClock");
 			textTime.classList.add("12HourClock");
@@ -68,14 +75,6 @@ function timeToday() {
 			textTime.classList.add("24HourClock");
 		}
 	}
-}
-
-//per seconde de nieuwe tijd weergeven
-setInterval(function(){
-	timeToday();
-},1000);
-
-
 // var i = 0;
 // function changeSky() {
 //   var document.body = document.getElementById("document.body");
