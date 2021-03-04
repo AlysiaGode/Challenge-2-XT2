@@ -1,5 +1,5 @@
 /*Specificeer lettertypes zodat iedere bezoeker hetzelfde ziet*/
-@font-face {
+/*@font-face {
 	font-family: "MyriadPro semibold";
 	src: url('Fonts/MYRIADPRO-SEMIBOLD.OTF') format('opentype');
 }
@@ -7,6 +7,16 @@
 @font-face {
 	font-family: "MyriadPro regular";
 	src: url('Fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
+}*/
+
+@font-face {
+	font-family: "Marmelad";
+	src: url('Fonts/Marmelad-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: "SquadaOne";
+	src: url('Fonts/SquadaOne-Regular.ttf') format('truetype');
 }
 
 body {
@@ -70,12 +80,14 @@ body {
 #time {
 	margin-top: 420px;
 	font-size: 40px;
-	font-family: MyriadPro semibold, arial;
+	/*font-family: MyriadPro semibold;*/
+	font-family: "Marmelad";
 }
 
 #date {
 	font-size: 30px;
-	font-family: MyriadPro regular, arial;
+	/*font-family: MyriadPro regular;*/
+	font-family: "Marmelad";
 }
 
 .time {
