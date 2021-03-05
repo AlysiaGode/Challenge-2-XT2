@@ -1,5 +1,5 @@
 /*Specificeer lettertypes zodat iedere bezoeker hetzelfde ziet*/
-/*@font-face {
+@font-face {
 	font-family: "MyriadPro semibold";
 	src: url('Fonts/MYRIADPRO-SEMIBOLD.OTF') format('opentype');
 }
@@ -7,16 +7,6 @@
 @font-face {
 	font-family: "MyriadPro regular";
 	src: url('Fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
-}*/
-
-@font-face {
-	font-family: "Marmelad";
-	src: url('Fonts/Marmelad-Regular.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: "SquadaOne";
-	src: url('Fonts/SquadaOne-Regular.ttf') format('truetype');
 }
 
 body {
@@ -33,26 +23,117 @@ body {
 	overflow: hidden;
 }
 
-#mountainFront, #mountainMiddle, #mountainBack {
+#mountainFront, #mountainMiddle, #mountainBack, .clouds {
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	display: block;
 }
 
+#cloud1, #cloud2, #cloud3, #cloud4 {
+	height: 100px;
+	width: 200px;
+}
+
+#cloud1 {
+	animation: moveCloudFirst 380s linear infinite;
+	margin-top: 50px;
+}
+
+#cloud2 {
+	animation: moveCloudSecond 480s linear infinite;
+}
+
+#cloud3 {
+	animation: moveCloudThird 480s linear infinite;
+}
+
+#cloud4 {
+	animation: moveCloudFourth 380s linear infinite;
+}
+
 #mountainFront {
 	margin-top: 500px;
+	width: 6000px;
 	z-index: -1;
+	animation: moveFrontMountain 230s linear infinite;
 }
 
 #mountainMiddle {
 	margin-top: 100px;
+	width: 6000px;
 	z-index: -1;
+	animation: moveMiddleMountain 360s linear infinite;
 }
 
 #mountainBack {
 	margin-top: 20px;
+	width: 6000px;
 	z-index: -1;
+	animation: moveBackMountain 420s linear infinite;
+}
+
+@keyframes moveFrontMountain {
+	from {
+		margin-left: -2500px;
+	}
+	to {
+		margin-left: 0px;
+	}
+}
+
+@keyframes moveMiddleMountain {
+	from {
+		margin-left: -2500px;
+	}
+	to {
+		margin-left: 0px;
+	}
+}
+
+@keyframes moveBackMountain {
+	from {
+		margin-left: -2500px;
+	}
+	to {
+		margin-left: 0px;
+	}
+}
+
+@keyframes moveCloudFirst {
+	from {
+		margin-left: 700px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
+
+@keyframes moveCloudSecond {
+	from {
+		margin-left: 100px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
+
+@keyframes moveCloudThird {
+	from {
+		margin-left: 1100px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
+
+@keyframes moveCloudFourth {
+	from {
+		margin-left: 1600px;
+	}
+	to {
+		margin-left: 2000px;
+	}
 }
 
 
@@ -81,13 +162,13 @@ body {
 	margin-top: 420px;
 	font-size: 40px;
 	/*font-family: MyriadPro semibold;*/
-	font-family: "Marmelad";
+	font-family: "MyriadPro semibold", serif;
 }
 
 #date {
 	font-size: 30px;
 	/*font-family: MyriadPro regular;*/
-	font-family: "Marmelad";
+	font-family: "MyriadPro regular", sans-serif;
 }
 
 .time {
