@@ -10,7 +10,7 @@
 }
 
 body {
-	margin: 0px;
+	margin: 0px auto;
 	overflow: hidden;
 	animation: sunTime 20s infinite ease-in-out;
 	height: 100%;
@@ -144,6 +144,8 @@ body {
 }
 
 
+
+
 /*#sky {
 	height: 100%;
 	width: 100%;
@@ -152,8 +154,8 @@ body {
 }*/
 
 .item {
-	height: 50px;
-	width: 500px;
+	/*height: 50px;
+	width: 100%;*/
 	margin: 0px auto;
 	color: white;
 	/*border: 1px solid green;*/
@@ -166,7 +168,7 @@ body {
 }
 
 #time {
-	margin-top: 320px;
+	margin-top: 280px;
 	font-size: 40px;
 	/*font-family: MyriadPro semibold;*/
 	font-family: "MyriadPro semibold", serif;
@@ -372,6 +374,51 @@ body {
 		margin-top: 270px;
 	}
 
+	#cloud1, #cloud2, #cloud3, #cloud4 {
+		height: 40px;
+		width: 90px;
+	}
+
+	#cloud1 {
+		margin-top: 30px;
+	}
+
+	@keyframes moveCloudFirst {
+	from {
+		margin-left: 400px;
+	}
+	to {
+		margin-left: 800px;
+	}
+}
+
+@keyframes moveCloudSecond {
+	from {
+		margin-left: 50px;
+	}
+	to {
+		margin-left: 800px;
+	}
+}
+
+@keyframes moveCloudThird {
+	from {
+		margin-left: 300px;
+	}
+	to {
+		margin-left: 800px;
+	}
+}
+
+@keyframes moveCloudFourth {
+	from {
+		margin-left: 600px;
+	}
+	to {
+		margin-left: 800px;
+	}
+}
+
 }
 
 @media only screen and (min-width: 1440px) {
@@ -379,11 +426,101 @@ body {
 		margin-top: 320px;
 	}
 
+	#cloud1, #cloud2, #cloud3, #cloud4 {
+		height: 80px;
+		width: 150px;
+	}
+
+	#cloud1 {
+		margin-top: 20px;
+	}
+
+	@keyframes moveCloudFirst {
+	from {
+		margin-left: 500px;
+	}
+	to {
+		margin-left: 1500px;
+	}
+}
+
+@keyframes moveCloudSecond {
+	from {
+		margin-left: 100px;
+	}
+	to {
+		margin-left: 1500px;
+	}
+}
+
+@keyframes moveCloudThird {
+	from {
+		margin-left: 800px;
+	}
+	to {
+		margin-left: 1500px;
+	}
+}
+
+@keyframes moveCloudFourth {
+	from {
+		margin-left: 1200px;
+	}
+	to {
+		margin-left: 1500px;
+	}
+}
+
 }
 
 @media only screen and (min-width: 1920px) {
 	#time {
 		margin-top: 420px;
 	}
+
+	#cloud1, #cloud2, #cloud3, #cloud4 {
+		height: 150px;
+		width: 200px;
+	}
+
+	#cloud1 {
+		margin-top: 20px;
+	}
+
+	@keyframes moveCloudFirst {
+	from {
+		margin-left: 700px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
+
+@keyframes moveCloudSecond {
+	from {
+		margin-left: 100px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
+
+@keyframes moveCloudThird {
+	from {
+		margin-left: 1100px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
+
+@keyframes moveCloudFourth {
+	from {
+		margin-left: 1600px;
+	}
+	to {
+		margin-left: 2000px;
+	}
+}
 
 }
