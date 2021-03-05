@@ -49,20 +49,20 @@ body {
 }
 
 #cloud1 {
-	animation: moveCloudFirst 380s linear infinite;
+	animation: moveCloudFirst 320s linear infinite;
 	margin-top: 10px;
 }
 
 #cloud2 {
-	animation: moveCloudSecond 480s linear infinite;
+	animation: moveCloudSecond 320s linear infinite;
 }
 
 #cloud3 {
-	animation: moveCloudThird 480s linear infinite;
+	animation: moveCloudThird 320s linear infinite;
 }
 
 #cloud4 {
-	animation: moveCloudFourth 380s linear infinite;
+	animation: moveCloudFourth 310s linear infinite;
 }
 
 #mountainFront {
@@ -118,7 +118,7 @@ body {
 		margin-left: 150px;
 	}
 	to {
-		margin-left: 400px;
+		margin-left: 450px;
 	}
 }
 
@@ -127,7 +127,7 @@ body {
 		margin-left: -20px;
 	}
 	to {
-		margin-left: 400px;
+		margin-left: 470px;
 	}
 }
 
@@ -136,7 +136,7 @@ body {
 		margin-left: 190px;
 	}
 	to {
-		margin-left: 400px;
+		margin-left: 410px;
 	}
 }
 
@@ -145,7 +145,7 @@ body {
 		margin-left: 15px;
 	}
 	to {
-		margin-left: 400px;
+		margin-left: 450px;
 	}
 }
 
@@ -394,7 +394,7 @@ body {
 		margin-left: 400px;
 	}
 	to {
-		margin-left: 800px;
+		margin-left: 870px;
 	}
 }
 
@@ -403,7 +403,7 @@ body {
 		margin-left: 50px;
 	}
 	to {
-		margin-left: 800px;
+		margin-left: 810px;
 	}
 }
 
@@ -412,7 +412,7 @@ body {
 		margin-left: 300px;
 	}
 	to {
-		margin-left: 800px;
+		margin-left: 830px;
 	}
 }
 
@@ -421,7 +421,7 @@ body {
 		margin-left: 600px;
 	}
 	to {
-		margin-left: 800px;
+		margin-left: 860px;
 	}
 }
 
@@ -446,7 +446,7 @@ body {
 		margin-left: 500px;
 	}
 	to {
-		margin-left: 1500px;
+		margin-left: 1570px;
 	}
 }
 
@@ -455,7 +455,7 @@ body {
 		margin-left: 100px;
 	}
 	to {
-		margin-left: 1500px;
+		margin-left: 1630px;
 	}
 }
 
@@ -473,7 +473,7 @@ body {
 		margin-left: 1200px;
 	}
 	to {
-		margin-left: 1500px;
+		margin-left: 1540px;
 	}
 }
 
@@ -498,7 +498,7 @@ body {
 		margin-left: 700px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 2050px;
 	}
 }
 
@@ -507,7 +507,7 @@ body {
 		margin-left: 100px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 2060px;
 	}
 }
 
@@ -516,7 +516,7 @@ body {
 		margin-left: 1100px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 2140px;
 	}
 }
 
