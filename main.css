@@ -13,6 +13,8 @@ body {
 	margin: 0px;
 	overflow: hidden;
 	animation: sunTime 20s infinite ease-in-out;
+	height: 100%;
+	width: 100%
 }
 
 .bg {
@@ -164,7 +166,7 @@ body {
 }
 
 #time {
-	margin-top: 420px;
+	margin-top: 320px;
 	font-size: 40px;
 	/*font-family: MyriadPro semibold;*/
 	font-family: "MyriadPro semibold", serif;
@@ -197,6 +199,7 @@ body {
 	right: 20vw;
 	transform-origin: -27vw 5vw;
 	animation: sunPosition 86400s infinite forwards linear, sunRays 2s alternate infinite/*, sunTime 20s infinite ease-in-out*/;
+	display: none;
 }
 
 #moon {
@@ -205,6 +208,7 @@ body {
 	 animation: moonPosition 86400s infinite forwards linear;
 	 bottom: 0vw;
 	 right: 20vw;
+	 display: none;
 }
 
 @keyframes sunPosition {
@@ -345,4 +349,41 @@ body {
   to {
     transform: translateY(-1000px);
   }
+}
+
+.button {
+	height: 80px;
+	width: 80px;
+	background-color: white;
+	box-shadow: inset 0 0 10px grey;
+	border-radius: 100%;
+	position: absolute;
+	margin-top: -100px;
+	margin-left: 20px;
+}
+
+#buttonRain {
+	margin-top: -200px;
+}
+
+
+@media only screen and (min-width: 768px) {
+	#time {
+		margin-top: 270px;
+	}
+
+}
+
+@media only screen and (min-width: 1440px) {
+	#time {
+		margin-top: 320px;
+	}
+
+}
+
+@media only screen and (min-width: 1920px) {
+	#time {
+		margin-top: 420px;
+	}
+
 }
