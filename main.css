@@ -9,6 +9,12 @@
 	src: url('Fonts/MYRIADPRO-REGULAR.OTF') format('opentype');
 }
 
+html {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
 body {
 	margin: 0px auto;
 	overflow: hidden;
@@ -38,13 +44,13 @@ body {
 }
 
 #cloud1, #cloud2, #cloud3, #cloud4 {
-	height: 100px;
-	width: 200px;
+	height: 50px;
+	width: 100px;
 }
 
 #cloud1 {
 	animation: moveCloudFirst 380s linear infinite;
-	margin-top: 50px;
+	margin-top: 10px;
 }
 
 #cloud2 {
@@ -109,37 +115,37 @@ body {
 
 @keyframes moveCloudFirst {
 	from {
-		margin-left: 700px;
+		margin-left: 150px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 400px;
 	}
 }
 
 @keyframes moveCloudSecond {
 	from {
-		margin-left: 100px;
+		margin-left: -20px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 400px;
 	}
 }
 
 @keyframes moveCloudThird {
 	from {
-		margin-left: 1100px;
+		margin-left: 190px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 400px;
 	}
 }
 
 @keyframes moveCloudFourth {
 	from {
-		margin-left: 1600px;
+		margin-left: 15px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 400px;
 	}
 }
 
