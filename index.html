@@ -7,6 +7,7 @@
 	<title>Aly's Clock</title>
 	<link rel="stylesheet" type="text/css" href="gridlayout.css">
 	<link rel="stylesheet" type="text/css" href="main.css">	
+	<script src="https://kit.fontawesome.com/90d75487c4.js" crossorigin="anonymous"></script>
    	<script src="script.js" defer></script>
 </head>
 <body>
@@ -33,12 +34,16 @@
 				</div>
 			</div>
 		</div>
-	<!-- <div class="conditionButtons">
-		<div id="buttonRain" class="button"></div>
-		<div id="buttonThunder" class="button"></div>
-	</div> -->
+	<div class="conditionButtons">
+		<div id="buttonRain" class="button"><i id="rainIcon" class="fas fa-tint"></i></div>
+		<div id="buttonThunder" class="button"><i id="thunderIcon" class="fas fa-bolt bolt"></i></div>
+	</div>
 	<div class="weather">
-		<div class="rain"></div>
+		<div id="rainW">
+			<div id="frontDrop"class="rain front-row"></div>
+  			<div id="backDrop"class="rain back-row"></div>
+		</div>
+		<div id="thunderFlash" class="lightning"></div>
 		<!-- <div id="sun"></div>
 		<div id="moon"><img src="Fotos/moon.png" height="100px" width="100px"></div> -->
 	</div>

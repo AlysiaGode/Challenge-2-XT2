@@ -29,10 +29,10 @@ body {
 	position: absolute;
 	top: 0px;
 	overflow: hidden;
+	z-index: -1;
 }
 
 .grid-container {
-	position: relative;
 	z-index: 1;
 }
 
@@ -46,6 +46,10 @@ body {
 #cloud1, #cloud2, #cloud3, #cloud4 {
 	height: 50px;
 	width: 100px;
+}
+
+.clouds {
+	z-index: -1;
 }
 
 #cloud1 {
@@ -149,28 +153,19 @@ body {
 	}
 }
 
-
-
-
-/*#sky {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	background: radial-gradient(ellipse at center, #011b42 0%, #010f24 60%, #000103 100%);
-}*/
-
 .item {
 	/*height: 50px;
 	width: 100%;*/
 	margin: 0px auto;
 	color: white;
 	/*border: 1px solid green;*/
+	z-index: 4;
 }
 
 .item span {
 	text-align: center;
 	width: 100%;
-	display: block;
+	display: block;	
 }
 
 #time {
@@ -178,12 +173,66 @@ body {
 	font-size: 40px;
 	/*font-family: MyriadPro semibold;*/
 	font-family: "MyriadPro semibold", serif;
+	cursor: pointer;
+	width: 200px;
+
+}
+
+.grid-item {
+	z-index: 3;
 }
 
 #date {
 	font-size: 30px;
 	/*font-family: MyriadPro regular;*/
 	font-family: "MyriadPro regular", sans-serif;
+	cursor: default;
+	
+}
+
+.fas {
+	font-size: 30px;
+	margin-left: 28px;
+	margin-top: 25px;
+}
+
+.fas.fa-bolt {
+	margin-left: 30px; 
+}
+
+.fas.fa-tint-slash {
+	margin-left: 20px;
+}
+
+.weather {
+	height: 100%;
+	width: 100%;
+}
+
+#thunderFlash {
+	display: none;
+}
+
+.lightning {
+  	height: 100%;
+  	width: 100%;
+	filter: brightness(3);
+	animation: thunder ease-out 5s infinite;
+	background-color: white;
+	margin: 0px auto;
+ 	top: 0;
+  	left: 0;
+  	position: absolute;
+  	z-index: 2;
+}
+
+@keyframes thunder {
+  	0% {opacity: 0;}
+  	92% { opacity: 0; }
+	93% { opacity: 0.6; }
+ 	94% { opacity: 0.2; }
+  	96% { opacity: 0.9; } 
+  	100% {opacity: 0;}
 }
 
 .time {
@@ -368,10 +417,89 @@ body {
 	position: absolute;
 	margin-top: -100px;
 	margin-left: 20px;
+	opacity: 0.2;
+	transition: 1s;
+	z-index: 3;
+}
+
+.conditionButtons {
+	position: relative;
+	display: block;
+	cursor: pointer;
 }
 
 #buttonRain {
 	margin-top: -200px;
+}
+
+#rainW {
+	display: none;
+}
+
+.rain.back-row {
+  opacity: 0.5;
+}
+
+.rain {
+  position: absolute;
+  bottom: 100%;
+  width: 1px;
+  height: 15px;
+  border-bottom-right-radius: 100%;
+  left: 0;
+  z-index: 2;
+}
+
+#frontDrop {
+  box-shadow: 1899px 780px #FFF, 899px 40px #FFF,99px 0px #FFF,539px 90px #FFF,599px 0px #FFF,1199px 20px #FFF,356px 80px #FFF,832px 0px #FFF,243px 180px #FFF,4px 430px #FFF, 1994px 1692px #FFF , 961px 1928px #FFF , 819px 1320px #FFF , 1899px 52px #FFF , 28px 1937px #FFF , 157px 88px #FFF , 860px 1909px #FFF , 720px 427px #FFF,   1543px 1367px #FFF , 935px 1512px #FFF , 1355px 24px #FFF , 1894px 218px #FFF , 1703px 82px #FFF, 1500px 242px #FFF, 1642px 51px #FFF;
+  animation: drop 0.4s linear infinite, flickr 0.4s linear infinite;
+}
+
+#backDrop {
+	box-shadow: 697px 143px #FFF , 591px 1452px #FFF , 1773px 1411px #FFF , 1622px 1401px #FFF , 534px 340px #FFF , 1590px 284px #FFF , 1464px 528px #FFF , 734px 1718px #FFF , 1929px 1683px #FFF , 656px 480px #FFF , 833px 705px #FFF , 1567px 109px #FFF , 1055px 330px #FFF;
+	animation: drop 0.8s linear infinite, flickrr 0.8s linear infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+  75% {
+    transform: translateY(90vh);
+  }
+  100% {
+    transform: translateY(90vh);
+  }
+}
+
+@keyframes flickr {
+  0% {
+    opacity: 0.2;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flickrr {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.2;
+  }
 }
 
 
@@ -485,7 +613,7 @@ body {
 	}
 
 	#cloud1, #cloud2, #cloud3, #cloud4 {
-		height: 150px;
+		height: 100px;
 		width: 200px;
 	}
 
@@ -529,4 +657,3 @@ body {
 	}
 }
 
-}

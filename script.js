@@ -70,8 +70,7 @@ setInterval(function(){
 },1000);
 
 
-var buttonContainer = document.getElementsByClassName("grid-container");
-window.onclick = function() {
+textTime.onclick = function() {
 		if (textTime.classList.contains("24HourClock")) {
 			textTime.classList.remove("24HourClock");
 			textTime.classList.add("12HourClock");
@@ -185,3 +184,43 @@ var currentTime = new Date().getHours();
 setInterval(function(){
 	checkTime();
 },1000);
+
+var rain = document.getElementById("buttonRain");
+var rainIcon = document.getElementById("rainIcon");
+var rainW = document.getElementById("rainW");
+rain.onclick = function(){
+	if (rainIcon.classList.contains("fa-tint")) {
+		rain.style.opacity = "1";
+		rainIcon.classList.add("fa-tint-slash");
+		rainIcon.classList.remove("fa-tint");
+		rainW.style.display = "block";
+		rain.style.boxShadow = "0px 0px 10px 5px white";
+	} else if (rainIcon.classList.contains("fa-tint-slash")) {
+		rain.style.opacity = "0.2";
+		rainIcon.classList.remove("fa-tint-slash");
+		rainIcon.classList.add("fa-tint");
+		rainW.style.display = "none";
+		rain.style.boxShadow = "none";
+	}
+}
+
+var thunderIcon = document.getElementById("thunderIcon");
+var thunder = document.getElementById("buttonThunder");
+var lightning = document.getElementById("thunderFlash");
+
+thunder.onclick = function(){
+	if (thunderIcon.classList.contains("bolt")) {
+		thunder.style.opacity = "1";
+		thunderIcon.classList.add("noThunder");
+		thunderIcon.classList.remove("bolt");
+		lightning.style.display = "block";
+		thunder.style.boxShadow = "0px 0px 10px 5px white";
+	} else if (thunderIcon.classList.contains("noThunder")) {
+		thunder.style.opacity = "0.2";
+		thunderIcon.classList.remove("noThunder");
+		thunderIcon.classList.add("bolt");
+		lightning.style.display = "none";
+		thunder.style.boxShadow = "none";
+	}
+}
+
