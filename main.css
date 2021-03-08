@@ -18,7 +18,7 @@ html {
 body {
 	margin: 0px auto;
 	overflow: hidden;
-	animation: sunTime 20s infinite ease-in-out;
+	/*animation: sunTime 20s infinite ease-in-out;*/
 	height: 100%;
 	width: 100%
 }
