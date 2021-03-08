@@ -1,3 +1,11 @@
+//zorg dat alle getallen onder de 10 een 0 krijgen: 01 - 02 - 03 - 04 - 05 - 06 - 07 - 08 - 09
+function addLeadingZero(getal) {
+	if (getal < 10) {
+		getal = "0"+ getal;
+	}
+	return getal;
+}
+
 function timeToday() {
 	var date = new Date();
 	var hours = date.getHours();
@@ -9,54 +17,33 @@ function timeToday() {
 	var day =  date.getDate();
 
 	var timeOfDay;
-    
-    //zorg dat alle getallen onder de 10 een 0 krijgen: 01 - 02 - 03 - 04 - 05 - 06 - 07 - 08 - 09
-    if (hours < 10) {
-    	hours = "0" + hours;
-    } 
-    if (minutes < 10) {
-    	minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-    	seconds = "0" + seconds;
-    }
-
-    if (year < 10) {
-    	year = "0" + year;
-    } 
-    if (month < 10) {
-    	month = "0" + month;
-    }
-    if (day < 10) {
-    	day = "0" + day;
-    }
 
     var textTime = document.getElementById("textTime");
     var textDate = document.getElementById("textDate");
 
-    	if (textTime.classList.contains("12HourClock")) {
-			//bepaal de tijdsweergave aan de hand van het tijdstip van de dag AM of PM
-			if (hours == 0) {
-				hours = 12;
-				timeOfDay = "AM";
-			} 
+    if (textTime.classList.contains("12HourClock")) {
+		//bepaal de tijdsweergave aan de hand van het tijdstip van de dag AM of PM
+		if (hours == 0) {
+			hours = 12;
+			timeOfDay = "AM";
+		} 
 
-			if (hours < 12) {
-				timeOfDay = "AM";
-			} else if (hours > 12) {
-			    hours = hours - 12;
-			    timeOfDay = "PM";
-			    if (hours < 10) {
-    				hours = "0" + hours;
-    			}
-			}
+		if (hours < 12) {
+			timeOfDay = "AM";
+		} else if (hours > 12) {
+			   hours = hours - 12;
+			   timeOfDay = "PM";
+			   if (hours < 10) {
+    			hours = "0" + hours;
+    		}
+		}
 		
-			textTime.innerHTML = hours + ":" + minutes + ":" + seconds + timeOfDay;
-			textDate.innerHTML = year + "-" + month + "-" + day;
+		textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds) + timeOfDay;
+		textDate.innerHTML = addLeadingZero(year) + "-" + addLeadingZero(month) + "-" + addLeadingZero(day);
 
 		} else if (textTime.classList.contains("24HourClock")) {
-			textTime.innerHTML = hours + ":" + minutes + ":" + seconds;
-			textDate.innerHTML = day + "-" + month + "-" + year;
+			textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds);
+			textDate.innerHTML = addLeadingZero(year) + "-" + addLeadingZero(month) + "-" + addLeadingZero(day);
 		}
 }
 
@@ -78,19 +65,7 @@ textTime.onclick = function() {
 			textTime.classList.remove("12HourClock");
 			textTime.classList.add("24HourClock");
 		}
-	}
-// var i = 0;
-// function changeSky() {
-//   var document.body = document.getElementById("document.body");
-//   var morning = "radial-gradient(ellipse at center, #ff6f00 0%, #ffae00 60%, #ffd900 100%)";
-//   var day = "radial-gradient(ellipse at center, #ffe600 0%, #fff700 60%, #ffff00 100%)";
-//   var evening = "radial-gradient(ellipse at center, #2d08ff 0%, #25109e 60%, #0c014a 100%)";
-//   var night = "radial-gradient(ellipse at center, #011b42 0%, #010f24 60%, #000103 100%)";
-//   var color = [morning, day, evening, night];
-//   document.body.style.background = color[i];
-//   i = (i + 1) % color.length;
-// }
-// setInterval(changeSky, 86400000);
+	};
 
 var mountainBackImg = document.getElementById("mountainBack");
 var mountainMiddleImg = document.getElementById("mountainMiddle");
@@ -100,6 +75,8 @@ var cloud1Img = document.getElementById("cloud2");
 var cloud2Img = document.getElementById("cloud2");
 var cloud3Img = document.getElementById("cloud3");
 var cloud4Img = document.getElementById("cloud4");
+
+var forest = document.getElementById("forest");
 
 var currentTime = new Date().getHours();
       function checkTime() {
@@ -137,7 +114,7 @@ var currentTime = new Date().getHours();
       if (11 <= currentTime&&currentTime < 17) {
       //  		document.getElementById("sun").style.display = "block";
 	   		// document.getElementById("moon").style.display = "none";
-	   		document.body.style.background = "radial-gradient(ellipse at center, #79aa9f 0%, #377979 60%, #005058 100%)";
+	   		document.body.style.background = "radial-gradient(ellipse at center, #e6f9ff 0%, #b3ecff 60%, #99e6ff 100%)";
 	   		mountainBackImg.src = "Fotos/mountains-back.png";
 	   		mountainMiddleImg.src = "Fotos/mountains-mid1.png";
 	   		mountainFrontImg.src = "Fotos/mountains-mid2.png";
@@ -185,6 +162,48 @@ setInterval(function(){
 	checkTime();
 },1000);
 
+
+var seasonsIcon = document.getElementById("seasonsIcon");
+var seasons = document.getElementById("buttonSeasons");
+var seasonsW = document.getElementById("forest");
+var seasonsArray = ["Fotos/forestZomer.svg", "Fotos/forestHerfst.svg", "Fotos/forestWinter.svg", "Fotos/forestLente.svg"];
+var seasonChange;
+var iSeasons = 0;
+var snowW = document.getElementById("snowW");
+
+function changeSeason() {
+	seasonChange = setInterval(function(){
+		seasonsW.src = seasonsArray[iSeasons++];
+		if (iSeasons == seasonsArray.length) {
+			iSeasons = 0;
+		}
+		if (iSeasons == 3) {
+			rainW.style.display = "none";
+			snowW.style.display = "block";
+		} else if (rainIcon.classList.contains("fa-tint-slash")) {
+			rainW.style.display = "block";
+			snowW.style.display = "none";
+		}
+	},5000)
+}
+
+seasons.onclick = function(){
+	if (seasonsIcon.classList.contains("tree")) {
+		seasons.style.opacity = "1";
+		seasonsIcon.classList.add("noseasons");
+		seasonsIcon.classList.remove("tree");
+		seasons.style.boxShadow = "0px 0px 10px 5px white";
+		changeSeason();
+		// setInterval(changeSeason, 2000);
+	} else if (seasonsIcon.classList.contains("noseasons")) {
+		seasons.style.opacity = "0.2";
+		seasonsIcon.classList.remove("noseasons");
+		seasonsIcon.classList.add("tree");
+		seasons.style.boxShadow = "none";
+		clearInterval(seasonChange);
+	}
+};
+
 var rain = document.getElementById("buttonRain");
 var rainIcon = document.getElementById("rainIcon");
 var rainW = document.getElementById("rainW");
@@ -193,8 +212,14 @@ rain.onclick = function(){
 		rain.style.opacity = "1";
 		rainIcon.classList.add("fa-tint-slash");
 		rainIcon.classList.remove("fa-tint");
-		rainW.style.display = "block";
 		rain.style.boxShadow = "0px 0px 10px 5px white";
+		if (iSeasons == 3) {
+			rainW.style.display = "none";
+			snowW.style.display = "block";
+		} else {
+			rainW.style.display = "block";
+			snowW.style.display = "none";
+		}
 	} else if (rainIcon.classList.contains("fa-tint-slash")) {
 		rain.style.opacity = "0.2";
 		rainIcon.classList.remove("fa-tint-slash");
@@ -202,7 +227,7 @@ rain.onclick = function(){
 		rainW.style.display = "none";
 		rain.style.boxShadow = "none";
 	}
-}
+};
 
 var thunderIcon = document.getElementById("thunderIcon");
 var thunder = document.getElementById("buttonThunder");
@@ -222,5 +247,5 @@ thunder.onclick = function(){
 		lightning.style.display = "none";
 		thunder.style.boxShadow = "none";
 	}
-}
+};
 

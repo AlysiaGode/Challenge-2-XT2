@@ -23,6 +23,15 @@ body {
 	width: 100%
 }
 
+.fg {
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	z-index: 1;
+	position: absolute;
+	overflow: hidden;
+}
+
 .bg {
 	height: 100%;
 	width: 100%;
@@ -53,20 +62,30 @@ body {
 }
 
 #cloud1 {
-	animation: moveCloudFirst 320s linear infinite;
+	animation: moveCloudFirst 200s linear infinite;
 	margin-top: 10px;
 }
 
 #cloud2 {
-	animation: moveCloudSecond 320s linear infinite;
+	animation: moveCloudSecond 300s linear infinite;
 }
 
 #cloud3 {
-	animation: moveCloudThird 320s linear infinite;
+	animation: moveCloudThird 150s linear infinite;
 }
 
 #cloud4 {
-	animation: moveCloudFourth 310s linear infinite;
+	animation: moveCloudFourth 100s linear infinite;
+}
+
+#forest {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-left: 0px;
+	margin-top: 0px;
+	height: 100%;
+	/*width: 100%;*/
 }
 
 #mountainFront {
@@ -169,13 +188,12 @@ body {
 }
 
 #time {
-	margin-top: 280px;
+	margin-top: 370px;
 	font-size: 40px;
 	/*font-family: MyriadPro semibold;*/
 	font-family: "MyriadPro semibold", serif;
 	cursor: pointer;
 	width: 200px;
-
 }
 
 .grid-item {
@@ -432,6 +450,10 @@ body {
 	margin-top: -200px;
 }
 
+#buttonSeasons {
+	margin-top: -300px;
+}
+
 #rainW {
 	display: none;
 }
@@ -458,6 +480,34 @@ body {
 #backDrop {
 	box-shadow: 697px 143px #FFF , 591px 1452px #FFF , 1773px 1411px #FFF , 1622px 1401px #FFF , 534px 340px #FFF , 1590px 284px #FFF , 1464px 528px #FFF , 734px 1718px #FFF , 1929px 1683px #FFF , 656px 480px #FFF , 833px 705px #FFF , 1567px 109px #FFF , 1055px 330px #FFF;
 	animation: drop 0.8s linear infinite, flickrr 0.8s linear infinite;
+}
+
+#snowW {
+	display: none;
+}
+
+.snow.back-row-snow {
+  opacity: 0.5;
+}
+
+.snow {
+  position: absolute;
+  bottom: 100%;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  left: 0;
+  z-index: 2;
+}
+
+#frontSnow {
+  box-shadow: 1899px 780px #FFF, 899px 40px #FFF,99px 0px #FFF,539px 90px #FFF,599px 0px #FFF,1199px 20px #FFF,356px 80px #FFF,832px 0px #FFF,243px 180px #FFF,4px 430px #FFF, 1994px 1692px #FFF , 961px 1928px #FFF , 819px 1320px #FFF , 1899px 52px #FFF , 28px 1937px #FFF , 157px 88px #FFF , 860px 1909px #FFF , 720px 427px #FFF,   1543px 1367px #FFF , 935px 1512px #FFF , 1355px 24px #FFF , 1894px 218px #FFF , 1703px 82px #FFF, 1500px 242px #FFF, 1642px 51px #FFF;
+  animation: drop 0.8s linear infinite, flickr 0.8s linear infinite;
+}
+
+#backSnow {
+	box-shadow: 697px 143px #FFF , 591px 1452px #FFF , 1773px 1411px #FFF , 1622px 1401px #FFF , 534px 340px #FFF , 1590px 284px #FFF , 1464px 528px #FFF , 734px 1718px #FFF , 1929px 1683px #FFF , 656px 480px #FFF , 833px 705px #FFF , 1567px 109px #FFF , 1055px 330px #FFF;
+	animation: drop 0.9s linear infinite, flickrr 0.9s linear infinite;
 }
 
 @keyframes drop {
@@ -502,10 +552,10 @@ body {
   }
 }
 
-
+/*---------------------------------------------------------------------------768-------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) {
 	#time {
-		margin-top: 270px;
+		margin-top: 380px;
 	}
 
 	#cloud1, #cloud2, #cloud3, #cloud4 {
@@ -553,11 +603,19 @@ body {
 	}
 }
 
+/*#forest {
+	margin-top: 245px;
+}*/
+/*-------------------------------------------------------------------------1024-----------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1024px) {
+	/*#forest {
+	margin-top: 180px;
+	}*/
 }
-
+/*---------------------------------------------------1440---------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (min-width: 1440px) {
 	#time {
-		margin-top: 320px;
+		margin-top: 420px;
 	}
 
 	#cloud1, #cloud2, #cloud3, #cloud4 {
@@ -605,8 +663,10 @@ body {
 	}
 }
 
-}
-
+/*#forest {
+	margin-top: 145px;
+}*/
+/*-----------------------------------------------------------------------1920---------------------------------------------------------------------------------------------------------*/
 @media only screen and (min-width: 1920px) {
 	#time {
 		margin-top: 420px;
@@ -626,7 +686,7 @@ body {
 		margin-left: 700px;
 	}
 	to {
-		margin-left: 2050px;
+		margin-left: 1950px;
 	}
 }
 
@@ -635,7 +695,7 @@ body {
 		margin-left: 100px;
 	}
 	to {
-		margin-left: 2060px;
+		margin-left: 1960px;
 	}
 }
 
@@ -644,7 +704,7 @@ body {
 		margin-left: 1100px;
 	}
 	to {
-		margin-left: 2140px;
+		margin-left: 1940px;
 	}
 }
 
@@ -653,7 +713,11 @@ body {
 		margin-left: 1600px;
 	}
 	to {
-		margin-left: 2000px;
+		margin-left: 1950px;
 	}
 }
+
+/*#forest {
+	margin-top: 5px;
+}*/
 
