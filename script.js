@@ -239,7 +239,7 @@ function changeSeason() {
 		if (iSeasons == seasonsArray.length) {
 			iSeasons = 0;
 		}
-		if (iSeasons == 3) {
+		if (iSeasons == 3 && rainIcon.classList.contains("fa-tint-slash")) {
 			rainW.style.display = "none";
 			snowW.style.display = "block";
 		} else if (rainIcon.classList.contains("fa-tint-slash")) {
@@ -288,6 +288,7 @@ rain.onclick = function(){
 		rainIcon.classList.add("fa-tint");
 		rainW.style.display = "none";
 		rain.style.boxShadow = "none";
+		snowW.style.display = "none";
 	}
 };
 
