@@ -442,15 +442,210 @@ body {
 	border-radius: 100%;
 	position: relative;
 	margin-top: -100px;
-	margin-left: 20px;
+	margin-left: 5px;
 	opacity: 0.2;
 	transition: 1s;
 	z-index: 3;
 }
 
+#buttonFace {
+	background-color: yellow;
+	box-shadow: inset 0 0 10px yellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -200px;
+}
+
+.face {
+	height: 80px;
+	position: absolute;
+	width: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+#mouthAwake {
+	opacity: 0;
+}
+
+.face::before {
+	content: "";
+	position: absolute;
+	background-color: orange;
+	border-bottom-left-radius: 100%; 
+	border-bottom-right-radius: 100%; 
+	transition: 0.5s;
+	height: 10px;
+	width: 20px;
+	top: 52px;
+}
+
+.face:hover::before {
+	background-color: orange;
+	border-bottom-left-radius: 0%; 
+	border-bottom-right-radius: 0%; 
+	height: 6px;
+}
+
+.eyes {
+	position: relative;
+	top: -3px;
+	display: flex;
+}
+
+.eye {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: none;
+	background-color: white;
+	margin: 0 8px;
+	border-radius: 100%;
+}
+
+.eyes .eye::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform: translate(-50%,-50%);
+	width: 10px;
+	height: 10px;
+	background-color: black;
+	border-radius: 100%;
+}
+
+.eyeClosed {
+	top: -5px;
+	left: 0px;
+	display: flex;
+	position: relative;
+	display: block;
+	background-color: black;
+	margin: 0 8px;
+	height: 4px;
+	width: 15px;
+	border-radius: 20%;
+}
+
 .conditionButtons {
 	position: relative;
 	cursor: pointer;
+}
+
+#mouthSleep {
+	height: 20px;
+	width: 20px;
+	animation: snore 5s ease-in-out infinite;
+	position: absolute;
+	background-color: orange;
+	left: 30px;
+	top: 50px;
+	display: block;
+}
+
+@keyframes snore {
+	0% {
+		height: 6px;
+		width: 20px;
+		border-radius: 0%
+	}
+	50% {
+		height: 15px;
+		width: 20px;
+		border-radius: 30%;
+	}
+	100% {
+		height: 6px;
+		width: 20px;
+		border-radius: 0%
+	}
+}
+
+#sleep {
+	display: block;
+}
+
+.z {
+	position: absolute;
+}
+
+#firstZ {
+	animation: zSnoreFirst 3s linear infinite;
+	animation-delay: 2s;
+	opacity: 0;
+}
+
+#secondZ {
+	animation: zSnoreSecond 3s linear infinite;
+	animation-delay: 5s;
+	opacity: 0;
+}
+
+#thirdZ {
+	animation: zSnoreThird 3s linear infinite;
+	animation-delay: 7s;
+	opacity: 0;
+}
+
+@keyframes zSnoreFirst {
+	0% {
+		opacity: 0;
+		margin-top: -5px; 
+		left: 60px;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		margin-top: -55px; 
+		left: 70px;
+	}
+}
+
+@keyframes zSnoreSecond {
+	0% {
+		opacity: 0;
+		margin-top: -5px; 
+		left: 60px;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		margin-top: -55px; 
+		left: 70px;
+	}
+}
+
+@keyframes zSnoreThird {
+	0% {
+		opacity: 0;
+		margin-top: -5px; 
+		left: 60px;
+	}
+	10% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		margin-top: -55px; 
+		left: 70px;
+	}
 }
 
 #rainW {
@@ -551,6 +746,23 @@ body {
   }
 }
 
+@media only screen and (min-width: 375px){
+	.nested {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	#buttonFace {
+		margin-top: -100px;
+	}
+}
+
+@media only screen and (min-width: 425px){
+	.button {
+		margin-left: 15px;
+	}
+}
+
 /*---------------------------------------------------------------------------768-------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) {
 	#time {
@@ -592,6 +804,10 @@ body {
 .conditionButtons {
 	position: relative;
 	cursor: pointer;
+}
+
+#buttonFace {
+	margin-top: -400px;
 }
 
 #buttonRain {

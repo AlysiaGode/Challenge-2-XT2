@@ -162,6 +162,68 @@ setInterval(function(){
 	checkTime();
 },1000);
 
+var face = document.getElementById("buttonFace");
+var eye = document.querySelectorAll(".eye");
+
+function eyesMoving(){
+	eye.forEach(function(eye){
+		let x = (eye.getBoundingClientRect().left) + (eye.clientWidth/2); 
+		let y = (eye.getBoundingClientRect().top) + (eye.clientHeight/2); 
+		let radian = Math.atan2(event.pageX - x, event.pageY - y);
+		let rot = (radian *(180/Math.PI)*-1)+270;
+		eye.style.transform = "rotate("+rot+"deg)";
+	})
+}
+
+face.onmouseover = function(){
+	// if (face.classList.contains("asleep")) {
+	// 	rightEye.style.display = "block";
+	// } 
+};
+
+var rightEye = document.getElementById("eyeRight");
+var leftEye = document.getElementById("eyeLeft");
+var eyeRightClosed = document.getElementById("eyeRightClosed");
+var eyeLeftClosed = document.getElementById("eyeLeftClosed");
+var sleep = document.getElementById("sleep");
+var mouthSleep = document.getElementById("mouthSleep");
+var mouthAwake = document.getElementById("mouthAwake");
+// var mouthAwake = document.querySelector(".face");
+
+
+face.onclick = function(){
+	if (face.classList.contains("awake")) {
+		face.style.opacity = "0.2";
+		face.classList.add("asleep");
+		face.classList.remove("awake");
+		face.style.boxShadow = "none";
+
+		eyeLeftClosed.style.display = "block";
+		eyeRightClosed.style.display = "block";
+		rightEye.style.display = "none";
+		leftEye.style.display = "none";
+		sleep.style.display = "block";
+		mouthSleep.style.display = "block";
+		mouthAwake.style.opacity = "0";
+
+		document.querySelector('body').removeEventListener("mousemove", eyesMoving);
+	} else if (face.classList.contains("asleep")) {
+		face.style.opacity = "1";
+		face.classList.add("awake");
+		face.classList.remove("asleep");
+		face.style.boxShadow = "0px 0px 10px 5px yellow";
+
+		eyeLeftClosed.style.display = "none";
+		eyeRightClosed.style.display = "none";
+		rightEye.style.display = "block";
+		leftEye.style.display = "block";
+		sleep.style.display = "none";
+		mouthSleep.style.display = "none";
+		mouthAwake.style.opacity = "1";
+
+		document.querySelector('body').addEventListener("mousemove", eyesMoving);
+	}
+};
 
 var seasonsIcon = document.getElementById("seasonsIcon");
 var seasons = document.getElementById("buttonSeasons");
@@ -248,4 +310,5 @@ thunder.onclick = function(){
 		thunder.style.boxShadow = "none";
 	}
 };
+
 
