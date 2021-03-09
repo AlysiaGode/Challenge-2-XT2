@@ -33,9 +33,6 @@ function timeToday() {
 		} else if (hours > 12) {
 			   hours = hours - 12;
 			   timeOfDay = "PM";
-			   if (hours < 10) {
-    			hours = "0" + hours;
-    		}
 		}
 		
 		textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds) + timeOfDay;
@@ -43,7 +40,7 @@ function timeToday() {
 
 		} else if (textTime.classList.contains("24HourClock")) {
 			textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds);
-			textDate.innerHTML = addLeadingZero(year) + "-" + addLeadingZero(month) + "-" + addLeadingZero(day);
+			textDate.innerHTML = addLeadingZero(day) + "-" + addLeadingZero(month) + "-" + addLeadingZero(year);
 		}
 }
 
@@ -99,7 +96,7 @@ var currentTime = new Date().getHours();
 	  if (5 <= currentTime&&currentTime < 11) {
       //  		document.getElementById("sun").style.display = "block";
 	   		// document.getElementById("moon").style.display = "none";
-	   		document.body.style.background = "radial-gradient(ellipse at center, #936861 0%, #554855 60%, #262e4c 100%)";
+	   		document.body.style.background = "radial-gradient(ellipse at center, #ec6b69 0%, #f5aa93 40%, #90a3aa 100%)";
 	   		mountainBackImg.src = "Fotos/mountains-back-morning.png";
 	   		mountainMiddleImg.src = "Fotos/mountains-mid1-morning.png";
 	   		mountainFrontImg.src = "Fotos/mountains-mid2-morning.png";
@@ -126,10 +123,10 @@ var currentTime = new Date().getHours();
       }
 	  
 	  //evening
-      if (17 <= currentTime&&currentTime < 23) {
+      if (17 <= currentTime&&currentTime < 20) {
       //  		document.getElementById("sun").style.display = "none";
 	   		// document.getElementById("moon").style.display = "block";
-	   		document.body.style.background = "radial-gradient(ellipse at center, #9e6f4e 0%, #5e5352 60%, #314157 100%)";
+	   		document.body.style.background = "radial-gradient(ellipse at center, #c55c38 10%, #c56d38 20%, #558cb2 100%)";
 	   		mountainBackImg.src = "Fotos/mountains-back-earlynight.png";
 	   		mountainMiddleImg.src = "Fotos/mountains-mid1-earlynight.png";
 	   		mountainFrontImg.src = "Fotos/mountains-mid2-earlynight.png";
@@ -141,10 +138,10 @@ var currentTime = new Date().getHours();
       }
 	  
 	  //early night
-      if (23 <= currentTime&&currentTime < 24) {
+      if (20 <= currentTime&&currentTime < 24) {
 	   		// document.getElementById("sun").style.display = "none";
 	   		// document.getElementById("moon").style.display = "block";
-	   		document.body.style.background = "radial-gradient(ellipse at center, #4c6677 0%, #243038 60%, #0d1214 100%)";
+	   		document.body.style.background = "radial-gradient(ellipse at center, #c46a1e 0%, #3c4065 0%, #191e25 100%)";
 	   		mountainBackImg.src = "Fotos/mountains-back-night.png";
 	   		mountainMiddleImg.src = "Fotos/mountains-mid1-night.png";
 	   		mountainFrontImg.src = "Fotos/mountains-mid2-night.png";
