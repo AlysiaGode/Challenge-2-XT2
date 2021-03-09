@@ -465,6 +465,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	z-index: 1;
+	border-radius: 100%;
 }
 
 #mouthAwake {
@@ -519,7 +520,7 @@ body {
 }
 
 .eyeClosed {
-	top: -5px;
+	top: -3px;
 	left: 0px;
 	display: flex;
 	position: relative;

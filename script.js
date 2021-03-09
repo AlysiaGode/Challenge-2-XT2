@@ -175,12 +175,6 @@ function eyesMoving(){
 	})
 }
 
-face.onmouseover = function(){
-	// if (face.classList.contains("asleep")) {
-	// 	rightEye.style.display = "block";
-	// } 
-};
-
 var rightEye = document.getElementById("eyeRight");
 var leftEye = document.getElementById("eyeLeft");
 var eyeRightClosed = document.getElementById("eyeRightClosed");
@@ -188,8 +182,36 @@ var eyeLeftClosed = document.getElementById("eyeLeftClosed");
 var sleep = document.getElementById("sleep");
 var mouthSleep = document.getElementById("mouthSleep");
 var mouthAwake = document.getElementById("mouthAwake");
-// var mouthAwake = document.querySelector(".face");
 
+face.onmouseenter = function(){
+	if (face.classList.contains("asleep")) {
+		rightEye.style.display = "block";
+		eyeRightClosed.style.display = "none";
+		rightEye.style.marginLeft = "8px";
+		rightEye.style.marginTop = "0px";
+		eyeLeftClosed.style.marginLeft = "-59px";
+		eyeLeftClosed.style.position = "relative";
+		eyeLeftClosed.style.marginTop = "8px";
+		document.querySelector('body').addEventListener("mousemove", eyesMoving);
+	} 
+};
+
+face.onmouseleave = function(){
+	if (face.classList.contains("asleep")) {
+		rightEye.style.display = "none";
+		eyeRightClosed.style.display = "block";
+		rightEye.style.margin = "0 8px";
+		rightEye.style.marginTop = "0px";
+		eyeLeftClosed.style.margin = "0 8px";
+		eyeLeftClosed.style.position = "relative";
+		document.querySelector('body').removeEventListener("mousemove", eyesMoving);
+	} else if (face.classList.contains("awake")) {
+		rightEye.style.margin = "0 8px";
+		rightEye.style.marginTop = "0px";
+		eyeLeftClosed.style.margin = "0 8px";
+		eyeLeftClosed.style.position = "relative";
+	}
+};
 
 face.onclick = function(){
 	if (face.classList.contains("awake")) {
@@ -206,7 +228,15 @@ face.onclick = function(){
 		mouthSleep.style.display = "block";
 		mouthAwake.style.opacity = "0";
 
-		document.querySelector('body').removeEventListener("mousemove", eyesMoving);
+		rightEye.style.display = "block";
+		eyeRightClosed.style.display = "none";
+		rightEye.style.marginLeft = "8px";
+		rightEye.style.marginTop = "0px";
+		eyeLeftClosed.style.marginLeft = "-59px";
+		eyeLeftClosed.style.position = "relative";
+		eyeLeftClosed.style.marginTop = "8px";
+
+		// document.querySelector('body').removeEventListener("mousemove", eyesMoving);
 	} else if (face.classList.contains("asleep")) {
 		face.style.opacity = "1";
 		face.classList.add("awake");
@@ -220,6 +250,10 @@ face.onclick = function(){
 		sleep.style.display = "none";
 		mouthSleep.style.display = "none";
 		mouthAwake.style.opacity = "1";
+
+		rightEye.style.margin = "0 8px";
+		rightEye.style.marginTop = "0px";
+		eyeLeftClosed.style.position = "relative";
 
 		document.querySelector('body').addEventListener("mousemove", eyesMoving);
 	}
