@@ -43,7 +43,7 @@ body {
 	position: absolute;
 	top: 0px;
 	overflow: hidden;
-	z-index: -1;
+	/*z-index: -1;*/
 }
 
 .grid-container {
@@ -106,14 +106,14 @@ body {
 #mountainMiddle {
 	margin-top: 100px;
 	width: 6000px;
-	z-index: -1;
+	z-index: -2;
 	animation: moveMiddleMountain 360s linear infinite;
 }
 
 #mountainBack {
 	margin-top: 20px;
 	width: 6000px;
-	z-index: -1;
+	z-index: -3;
 	animation: moveBackMountain 420s linear infinite;
 }
 
@@ -271,36 +271,52 @@ body {
 	grid-area: date;
 }
 
+.sunMoon {
+	/*z-index: 1;*/
+	height: 100%;
+	width: 100%;
+}
+
 #sun {
-	/*vw en vh om de cirkel perfect rond op elke schermbreedte te houden*/
-	width: 8vw;
-	height: 8vw;
+	width: 70px;
+	height: 70px;
 	/*background: radial-gradient(ellipse at center, #f90 0%, #fc0 60%, #ff0 100%);*/
-	border-radius: 100%;
+	/*background-color: rgba(255, 255, 0);*/
+	/*border-radius: 100%;*/
 	position: absolute;
-	bottom: 0vw;
-	right: 20vw;
-	transform-origin: -27vw 5vw;
-	animation: sunPosition 86400s infinite forwards linear, sunRays 2s alternate infinite/*, sunTime 20s infinite ease-in-out*/;
-	display: none;
+	bottom: 500px;
+	left: -40px;
+	transform: rotate(0.1turn);
+	transform-origin: 62vw 0vw;;
+	z-index: -4;
+	/*animation: sunPosition 5s infinite forwards linear, sunRays 2s alternate infinite;*/
+	display: block;
+	/*box-shadow: 0 10px 100px yellow;*/
+	
 }
 
 #moon {
+	width: 40px;
+	height: 40px;
 	 position: absolute; 
-	 transform-origin: -27vw 5vw;
-	 animation: moonPosition 86400s infinite forwards linear;
-	 bottom: 0vw;
-	 right: 20vw;
-	 display: none;
+	 /*border-radius: 100%;*/
+	 z-index: -5;
+	 transform: rotate(0.1turn);
+	 transform-origin: 62vw 0vw;;
+	 /*animation: moonPosition 86400s infinite forwards linear;*/
+	 bottom: 500px;
+	 left: -40px;
+	 display: block;
+	 opacity: 0.8;
 }
 
 @keyframes sunPosition {
 	/*om zijn as*/
 	from {
-		transform: rotate(-.85turn);
+		transform: rotate(-1turn);
 	} 
 	to {
-		transform: rotate(.15turn);
+		transform: rotate(1turn);
 	}
 }
 
@@ -316,44 +332,11 @@ body {
 
 @keyframes sunRays {
 	from {
-		box-shadow: 0 0 100px #fff, 0 0 120px #fff;
+		box-shadow: 0 0 100px yellow, 0 0 120px yellow;
 	} 
 	to {
-		box-shadow: 0 0 50px #fff, 0 0 800px #fff;
+		box-shadow: 0 0 50px yellow, 0 0 800px yellow;
 	}
-}
-
-@keyframes sunTime {
-	/*0% {
-		background: radial-gradient(ellipse at center, #FFE484 0%, #FFCC33 60%, #FFBE33 100%);
-	}
-	50% {
-		background: radial-gradient(ellipse at center, #FFBE33 0%, #FFCC33 60%, #FFE484 100%);
-	}
-	75% {
-		background: radial-gradient(ellipse at center, #f90 0%, #fc0 60%, #ff0 100%);
-	}*/
-/*
-	0% { 
-		background: radial-gradient(ellipse at center, #e30ceb 0%, #a515ab 60%, #4c064f 100%);
-	}
-	20% { 
-		background: radial-gradient(ellipse at center, #ff3333 0%, #db2727 60%, #9c1111 100%);
-	}
-*/
-/*	0% { diep in de nacht zwart
-		background: radial-gradient(ellipse at center, #011b42 0%, #010f24 60%, #000103 100%);
-	}
-	50% { ochtend oranje
-		background: radial-gradient(ellipse at center, #ff6f00 0%, #ffae00 60%, #ffd900 100%);
-	}
-	60% { middag geel
-		background: radial-gradient(ellipse at center, #ffe600 0%, #fff700 60%, #ffff00 100%);
-	}
-	100% { nacht donkerblauw
-		background: radial-gradient(ellipse at center, #2d08ff 0%, #25109e 60%, #0c014a 100%);
-	}*/
-
 }
 
 .starsBg {
@@ -361,7 +344,7 @@ body {
 	height: 100%;
 	overflow: hidden;
 	position: absolute;
-	z-index: -2;
+	z-index: -4;
 }
 
 #stars {
@@ -850,6 +833,24 @@ body {
 	}
 }
 
+#sun {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	bottom: 300px;
+	left: -60px;
+	transform-origin: 58vw 0vw;;
+}
+
+#moon {
+	width: 90px;
+	height: 80px;
+	position: absolute;
+	bottom: 300px;
+	left: -60px;
+	transform-origin: 58vw 0vw;;
+}
+
 /*#forest {
 	margin-top: 245px;
 }*/
@@ -858,6 +859,24 @@ body {
 	/*#forest {
 	margin-top: 180px;
 	}*/
+
+	#sun {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		bottom: 200px;
+		left: -85px;
+		transform-origin: 58vw 0vw;;
+	}
+
+	#moon {
+		width: 90px;
+		height: 80px;
+		position: absolute;
+		bottom: 200px;
+		left: -85px;
+		transform-origin: 58vw 0vw;;
+	}
 }
 /*---------------------------------------------------1440---------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (min-width: 1440px) {
@@ -909,6 +928,24 @@ body {
 		margin-left: 1540px;
 	}
 }
+
+#sun {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		bottom: 0px;
+		left: -85px;
+		transform-origin: 57vw 0vw;;
+	}
+
+	#moon {
+		width: 90px;
+		height: 80px;
+		position: absolute;
+		bottom: 0px;
+		left: -85px;
+		transform-origin: 57vw 0vw;;
+	}
 
 /*#forest {
 	margin-top: 145px;
@@ -967,4 +1004,22 @@ body {
 /*#forest {
 	margin-top: 5px;
 }*/
+
+#sun {
+		width: 130px;
+		height: 130px;
+		position: absolute;
+		bottom: -350px;
+		left: -200px;
+		transform-origin: 60vw 0vw;;
+	}
+
+	#moon {
+		width: 100px;
+		height: 90px;
+		position: absolute;
+		bottom: -350px;
+		left: -200px;
+		transform-origin: 60vw 0vw;;
+	}
 

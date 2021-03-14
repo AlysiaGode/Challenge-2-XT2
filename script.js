@@ -26,22 +26,20 @@ function timeToday() {
 		if (hours == 0) {
 			hours = 12;
 			timeOfDay = "AM";
-		} 
-
-		if (hours < 12) {
+		} else if (hours < 12) {
 			timeOfDay = "AM";
 		} else if (hours > 12) {
-			   hours = hours - 12;
-			   timeOfDay = "PM";
+			hours = hours - 12;
+			timeOfDay = "PM";
 		}
 		
 		textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds) + timeOfDay;
 		textDate.innerHTML = addLeadingZero(year) + "-" + addLeadingZero(month) + "-" + addLeadingZero(day);
 
-		} else if (textTime.classList.contains("24HourClock")) {
-			textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds);
-			textDate.innerHTML = addLeadingZero(day) + "-" + addLeadingZero(month) + "-" + addLeadingZero(year);
-		}
+	} else if (textTime.classList.contains("24HourClock")) {
+		textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds);
+		textDate.innerHTML = addLeadingZero(day) + "-" + addLeadingZero(month) + "-" + addLeadingZero(year);
+	}
 }
 
 //laad meteen de pagina
@@ -93,7 +91,7 @@ var currentTime = new Date().getHours();
       }
 	  
 	  //morning
-	  if (5 <= currentTime&&currentTime < 11) {
+	  else if (5 <= currentTime&&currentTime < 11) {
       //  		document.getElementById("sun").style.display = "block";
 	   		// document.getElementById("moon").style.display = "none";
 	   		document.body.style.background = "radial-gradient(ellipse at center, #ec6b69 0%, #f5aa93 40%, #90a3aa 100%)";
@@ -108,7 +106,7 @@ var currentTime = new Date().getHours();
       }
 	  
 	  //day
-      if (11 <= currentTime&&currentTime < 17) {
+      else if (11 <= currentTime&&currentTime < 17) {
       //  		document.getElementById("sun").style.display = "block";
 	   		// document.getElementById("moon").style.display = "none";
 	   		document.body.style.background = "radial-gradient(ellipse at center, #e6f9ff 0%, #b3ecff 60%, #99e6ff 100%)";
@@ -123,7 +121,7 @@ var currentTime = new Date().getHours();
       }
 	  
 	  //evening
-      if (17 <= currentTime&&currentTime < 20) {
+      else if (17 <= currentTime&&currentTime < 20) {
       //  		document.getElementById("sun").style.display = "none";
 	   		// document.getElementById("moon").style.display = "block";
 	   		document.body.style.background = "radial-gradient(ellipse at center, #c55c38 10%, #c56d38 20%, #558cb2 100%)";
@@ -138,7 +136,7 @@ var currentTime = new Date().getHours();
       }
 	  
 	  //early night
-      if (20 <= currentTime&&currentTime < 24) {
+      else if (20 <= currentTime&&currentTime < 24) {
 	   		// document.getElementById("sun").style.display = "none";
 	   		// document.getElementById("moon").style.display = "block";
 	   		document.body.style.background = "radial-gradient(ellipse at center, #c46a1e 0%, #3c4065 0%, #191e25 100%)";
@@ -343,4 +341,46 @@ thunder.onclick = function(){
 	}
 };
 
+var star = document.getElementById("star");
+var sun = document.getElementById('sun');
+var moon = document.getElementById('moon');
 
+function rotateSun(){
+	if (7 <= currentTime&&currentTime < 9) {
+      	sun.style.transform = "rotate(0.15turn)";
+    } else if (9 <= currentTime&&currentTime < 11) {
+     	sun.style.transform = "rotate(0.2turn)";
+    } else if (11 <= currentTime&&currentTime < 13) {
+ 		sun.style.transform = "rotate(0.25turn)";
+	} else if (13 <= currentTime&&currentTime < 15) {
+     	sun.style.transform = "rotate(0.3turn)";
+    } else if (15 <= currentTime&&currentTime < 17) {
+    	sun.style.transform = "rotate(0.35turn)";
+	} else if (17 <= currentTime&&currentTime < 19) {
+		sun.style.transform = "rotate(0.4turn)";
+	} else {
+		sun.style.display = "none";
+	}
+	star.style.display = "none";
+}
+
+rotateSun();
+
+function rotateMoon(){
+	if (20 <= currentTime&&currentTime < 22) {
+      	moon.style.transform = "rotate(0.15turn)";
+    } else if (22 <= currentTime&&currentTime < 24) {
+     	moon.style.transform = "rotate(0.2turn)";
+    } else if (0 <= currentTime&&currentTime < 2) {
+    	moon.style.transform = "rotate(0.25turn)";
+	} else if (2 <= currentTime&&currentTime < 4) {
+     	moon.style.transform = "rotate(0.3turn)";
+    } else if (4 <= currentTime&&currentTime < 6) {
+    	moon.style.transform = "rotate(0.4turn)";
+	} else {
+		moon.style.display = "none";
+	}
+	star.style.display = "block";
+}
+
+rotateMoon();
