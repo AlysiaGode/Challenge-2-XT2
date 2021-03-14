@@ -28,10 +28,10 @@ function timeToday() {
 			timeOfDay = "AM";
 		} else if (hours < 12) {
 			timeOfDay = "AM";
-		} else if (hours > 12) {
+		} else if (hours >= 12) {
 			hours = hours - 12;
 			timeOfDay = "PM";
-		}
+		} 
 		
 		textTime.innerHTML = addLeadingZero(hours) + ":" + addLeadingZero(minutes) + ":" + addLeadingZero(seconds) + timeOfDay;
 		textDate.innerHTML = addLeadingZero(year) + "-" + addLeadingZero(month) + "-" + addLeadingZero(day);
