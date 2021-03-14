@@ -70,12 +70,12 @@ body {
 }
 
 #cloud1 {
-	animation: moveCloudFirst 200s linear infinite;
+	animation: moveCloudFirst 250s linear infinite;
 	margin-top: 10px;
 }
 
 #cloud2 {
-	animation: moveCloudSecond 300s linear infinite;
+	animation: moveCloudSecond 350s linear infinite;
 }
 
 #cloud3 {
@@ -83,7 +83,7 @@ body {
 }
 
 #cloud4 {
-	animation: moveCloudFourth 100s linear infinite;
+	animation: moveCloudFourth 200s linear infinite;
 }
 
 #forest {
